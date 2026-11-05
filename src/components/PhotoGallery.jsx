@@ -144,6 +144,10 @@ export default function PhotoGallery() {
                 src={photo.image}
                 alt={photo.title}
                 loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = '/images/fallbacks/gallery-fallback.svg';
+                }}
                 className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
               />
 
@@ -234,6 +238,10 @@ export default function PhotoGallery() {
                 <img
                   src={activePhoto.image}
                   alt={activePhoto.title}
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/images/fallbacks/gallery-fallback.svg';
+                  }}
                   className="max-h-[72vh] w-auto max-w-full object-contain mx-auto"
                 />
               </div>

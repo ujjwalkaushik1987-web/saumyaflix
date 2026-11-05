@@ -57,6 +57,10 @@ export default function StoryTimeline() {
                         src={event.image}
                         alt={event.title}
                         loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = '/images/fallbacks/timeline-fallback.svg';
+                        }}
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#140D13] via-[#140D13]/30 to-transparent" />

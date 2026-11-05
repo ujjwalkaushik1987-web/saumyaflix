@@ -20,13 +20,8 @@ export default function Home({
   const [aboutModalOpen, setAboutModalOpen] = useState(false);
 
   const handlePlayStory = () => {
-    // Scrolls to the Story Timeline or opens trailer
-    const storySection = document.getElementById('story');
-    if (storySection) {
-      storySection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      onOpenTrailer();
-    }
+    // Opens the 3-Part Birthday Special Cinema Player
+    onOpenTrailer();
   };
 
   return (

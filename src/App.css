@@ -74,7 +74,7 @@ body {
   background:
     linear-gradient(90deg, #10080d 0%, #10080dce 43%, transparent 100%),
     linear-gradient(0deg, #10080d, transparent 35%),
-    url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1800")
+    url("/images/hero/saumya-hero.jpg")
     center 45% / cover;
 }
 

@@ -26,6 +26,10 @@ export default function MovieCard({ item, onSelectCard }) {
           src={item.image}
           alt={item.title}
           loading="lazy"
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = '/images/fallbacks/memory-fallback.svg';
+          }}
           className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
         />
 

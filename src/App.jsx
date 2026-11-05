@@ -16,6 +16,22 @@ export default function App() {
 
   const audioState = useAudio();
 
+  const handleOpenTrailer = () => {
+    if (audioState.isPlaying) {
+      audioState.togglePlay();
+      sessionStorage.setItem('resumeMusicOnClose', 'true');
+    }
+    setTrailerOpen(true);
+  };
+
+  const handleCloseTrailer = () => {
+    setTrailerOpen(false);
+    if (sessionStorage.getItem('resumeMusicOnClose') === 'true') {
+      sessionStorage.removeItem('resumeMusicOnClose');
+      audioState.startMusic();
+    }
+  };
+
   const handleStartCelebration = () => {
     setShowOpening(false);
     // User interaction enables browser audio autoplay
@@ -69,15 +85,15 @@ export default function App() {
         activeSection={activeSection}
         onNavigate={handleNavigate}
         onOpenSurprise={() => setSurpriseOpen(true)}
-        onOpenTrailer={() => setTrailerOpen(true)}
+        onOpenTrailer={handleOpenTrailer}
       />
 
       {/* Main Content Area */}
       <Home
         onOpenSurprise={() => setSurpriseOpen(true)}
         trailerOpen={trailerOpen}
-        onOpenTrailer={() => setTrailerOpen(true)}
-        onCloseTrailer={() => setTrailerOpen(false)}
+        onOpenTrailer={handleOpenTrailer}
+        onCloseTrailer={handleCloseTrailer}
       />
 
       {/* Floating Music Visualizer Dock */}

@@ -47,6 +47,10 @@ export default function DetailModal({ item, onClose, onPlayTrailer }) {
             <img
               src={item.image}
               alt={item.title}
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/images/fallbacks/memory-fallback.svg';
+              }}
               className="w-full h-full object-cover object-center"
             />
 

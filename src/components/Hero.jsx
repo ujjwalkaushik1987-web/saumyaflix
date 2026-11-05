@@ -15,6 +15,10 @@ export default function Hero({ onPlayStory, onMoreInfo }) {
           animate={{ scale: 1 }}
           transition={{ duration: 7, ease: 'easeOut' }}
           src={hero.backgroundImage}
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = hero.fallbackImage || '/images/fallbacks/hero-fallback.svg';
+          }}
           alt="Saumyaflix Hero Banner"
           className="w-full h-full object-cover object-center filter brightness-[0.62] contrast-[1.08]"
         />

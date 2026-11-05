@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0B14" />
+      <stop offset="45%" stop-color="#0E060D" />
+      <stop offset="100%" stop-color="#090609" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D92D55" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#1A0B14" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#090609" stop-opacity="0" />
+    </radialGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)" />
+  <circle cx="960" cy="540" r="500" fill="url(#glow)" />
+
+  <!-- Decorative Stars & Particles -->
+  <circle cx="280" cy="220" r="2.5" fill="#EBA6B6" opacity="0.6" />
+  <circle cx="1640" cy="280" r="2.5" fill="#D6B477" opacity="0.7" />
+  <circle cx="420" cy="780" r="3" fill="#D6B477" opacity="0.5" />
+  <circle cx="1520" cy="720" r="3" fill="#EBA6B6" opacity="0.6" />
+  <circle cx="880" cy="180" r="2" fill="#FFFFFF" opacity="0.8" />
+  <circle cx="1120" cy="860" r="2.5" fill="#FFFFFF" opacity="0.5" />
+
+  <!-- Center Heart & Cinema Emblem -->
+  <g transform="translate(960, 480)" text-anchor="middle">
+    <!-- Heart outline -->
+    <path d="M 0,-40 C -60,-110 -150,-50 -150,30 C -150,110 0,200 0,210 C 0,200 150,110 150,30 C 150,-50 60,-110 0,-40 Z" 
+          fill="none" stroke="#D92D55" stroke-width="4" opacity="0.4" filter="url(#softGlow)" />
+    <path d="M 0,-25 C -45,-80 -115,-35 -115,25 C -115,85 0,155 0,165 C 0,155 115,85 115,25 C 115,-35 45,-80 0,-25 Z" 
+          fill="#D92D55" opacity="0.25" />
+
+    <!-- Center Icon -->
+    <text y="45" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="70" fill="#EBA6B6" text-anchor="middle">❤️</text>
+  </g>
+
+  <!-- Cinema Typography -->
+  <text x="960" y="730" font-family="'Playfair Display', Georgia, serif" font-size="44" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">
+    SAUMYAFLIX ORIGINAL
+  </text>
+  <text x="960" y="780" font-family="'Playfair Display', Georgia, serif" font-size="22" font-style="italic" fill="#EBA6B6" text-anchor="middle" letter-spacing="2">
+    An Endless Love Story
+  </text>
+  <text x="960" y="825" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" fill="#A8929D" text-anchor="middle" letter-spacing="3">
+    ADD YOUR HERO PHOTO: public/images/hero/saumya-hero.jpg
+  </text>
+</svg>
